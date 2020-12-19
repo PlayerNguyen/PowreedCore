@@ -1,0 +1,9 @@
+name: PowreedCore
+version: @version@
+main: com.playernguyen.powreedcore.PowreedCore
+authors: [ Player_Nguyen ]
+description: The core plugin of Player Nguyen
+commands:
+  powreed:
+    description: The Powreed plugin' command
+    usage: /powreed
