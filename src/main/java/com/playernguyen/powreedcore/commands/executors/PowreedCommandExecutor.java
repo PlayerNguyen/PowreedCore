@@ -47,7 +47,7 @@ public abstract class PowreedCommandExecutor<Result extends PowreedCommandResult
 
     @Override
     public String getPermission() {
-        return plugin.getName() + ".command." + getName();
+        return plugin.getName().toLowerCase() + ".command." + getName();
     }
 
     @Override
