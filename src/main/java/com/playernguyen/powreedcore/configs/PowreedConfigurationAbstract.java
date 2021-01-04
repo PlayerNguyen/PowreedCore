@@ -150,4 +150,18 @@ public abstract class PowreedConfigurationAbstract<T extends PowreedConfiguratio
     public void set(T entry, Object object) {
         this.fileConfiguration.set(entry.path(), object);
     }
+
+    /**
+     * @return the file of config
+     */
+    public File getFile() {
+        return file;
+    }
+
+    /**
+     * @return the file configuration of this config
+     */
+    public FileConfiguration getFileConfiguration() {
+        return fileConfiguration;
+    }
 }
