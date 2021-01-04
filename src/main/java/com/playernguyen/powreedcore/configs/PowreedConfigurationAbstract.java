@@ -102,6 +102,7 @@ public abstract class PowreedConfigurationAbstract<T extends PowreedConfiguratio
 
     /**
      * Casting {@link #get(PowreedConfigurationEntryInterface)} as Integer
+     *
      * @param entry the configuration entry
      * @return the Integer value of method {@link #get(PowreedConfigurationEntryInterface)}
      * @throws ClassCastException whether the entry wasn't an Integer
@@ -112,6 +113,7 @@ public abstract class PowreedConfigurationAbstract<T extends PowreedConfiguratio
 
     /**
      * Casting {@link #get(PowreedConfigurationEntryInterface)} as Double
+     *
      * @param entry the configuration entry
      * @return the Double value of method
      */
@@ -122,7 +124,7 @@ public abstract class PowreedConfigurationAbstract<T extends PowreedConfiguratio
     /**
      * Get an entry of configuration
      *
-     * @param entry the configuration entry
+     * @param entry   the configuration entry
      * @param <TType> a type of object
      * @return an object which will cast as TType
      * @throws ClassCastException the object was cast to wrong type
@@ -137,5 +139,15 @@ public abstract class PowreedConfigurationAbstract<T extends PowreedConfiguratio
      */
     public void reload() {
         this.fileConfiguration = YamlConfiguration.loadConfiguration(this.file);
+    }
+
+    /**
+     * Set an object into entry
+     *
+     * @param entry  the configuration entry
+     * @param object an object to be set
+     */
+    public void set(T entry, Object object) {
+        this.fileConfiguration.set(entry.path(), object);
     }
 }
